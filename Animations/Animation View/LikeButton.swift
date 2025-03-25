@@ -14,10 +14,11 @@ struct LikeButton: View {
     
     // MARK: - FUNCTIONS
     
-    func image(_ image: Image) -> some View {
+    func image(_ image: Image, show: Bool) -> some View {
         image
             .tint(isLiked ? .red : .black)
             .font(.system(size: 60))
+            .scaleEffect(show ? 1 : 0)
     }
     
     // MARK: - BODY
@@ -27,11 +28,10 @@ struct LikeButton: View {
             self.isLiked.toggle()
         } label: {
             ZStack {
-                image(Image(systemName: "heart.fill"))
-                image(Image(systemName: "heart"))
+                image(Image(systemName: "heart.fill"), show: isLiked)
+                image(Image(systemName: "heart"), show: !isLiked)
             } //: ZSTACK
         } //: BUTTON
-
     }
 }
 
