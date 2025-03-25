@@ -10,10 +10,19 @@ import SwiftUI
 struct LikeButton: View {
     // MARK: - PROPERTIES
     
+    @State private var isLiked: Bool = false
+    
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            self.isLiked.toggle()
+        } label: {
+            Image(systemName: isLiked ? "heart.fill" : "heart")
+                .tint(isLiked ? .red : .black)
+                .font(.system(size: 60))
+        }
+
     }
 }
 
