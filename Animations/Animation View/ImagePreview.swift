@@ -10,10 +10,28 @@ import SwiftUI
 struct ImagePreview: View {
     // MARK: - PROPERTIES
     
+    // MARK: - FUNCTIONS
+    
+    func image(_ image: String) -> some View {
+        Image(image)
+            .resizable()
+    }
+    
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid {
+            GridRow {
+                image("image1")
+                image("image2")
+            } //: GRID ROW
+            
+            GridRow {
+                image("image3")
+                image("image4")
+            } //: GRID ROW
+        } //: GRID
+        .padding(10)
     }
 }
 
