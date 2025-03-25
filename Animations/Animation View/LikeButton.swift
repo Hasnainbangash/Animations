@@ -19,6 +19,8 @@ struct LikeButton: View {
             .tint(isLiked ? .red : .black)
             .font(.system(size: 60))
             .scaleEffect(show ? 1 : 0)
+            .opacity(show ? 1 : 0)
+            .animation(.interpolatingSpring(stiffness: 170, damping: 15), value: show) // This Spring Animation gives a bouncy, natural effect
     }
     
     // MARK: - BODY
