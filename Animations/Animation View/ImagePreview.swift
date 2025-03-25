@@ -19,6 +19,7 @@ struct ImagePreview: View {
     func image(_ imageName: String) -> some View {
         Image(imageName)
             .resizable()
+            // The matchedGeometryEffect modifier creates a smooth transition between two views that share the same ID within a Namespace. It allows SwiftUI to animate size, position, and shape changes seamlessly.
             .matchedGeometryEffect(id: imageName, in: previewSmoothly)
             .zIndex(selectedImage == imageName ? 1 : 0)
             .onTapGesture {
