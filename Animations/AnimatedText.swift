@@ -21,7 +21,7 @@ struct AnimatedText: View {
         Rectangle()
             .overlay {
                 LinearGradient(colors: [.clear, .white, .clear], startPoint: .leading, endPoint: .trailing)
-                    // Here the offset will move the colors in the horizontal to 100 points forward from the origin
+                    // Here the offset will move the colors in the horizontal to forward
                     .offset(x: moveGradient ? -screenWidth/2 : screenWidth/2)
             }
             // This linear animatons means that animation happens at a constant speed without any acceleration or deceleration.
