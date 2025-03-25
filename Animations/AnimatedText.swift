@@ -26,9 +26,16 @@ struct AnimatedText: View {
             }
             // This linear animatons means that animation happens at a constant speed without any acceleration or deceleration.
             .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: moveGradient)
+            // The mask will hide the original view and only be visible where the content is
+            .mask {
+                Text("Slide to power off")
+                    .foregroundColor(Color.black)
+                    .font(.largeTitle)
+            }
             .onAppear {
                 self.moveGradient.toggle()
             }
+            .background(Color.gray)
     }
 }
 
