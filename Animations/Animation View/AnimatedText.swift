@@ -21,6 +21,8 @@ struct AnimatedText: View {
         Rectangle()
             .overlay {
                 LinearGradient(colors: [.clear, .white, .clear], startPoint: .leading, endPoint: .trailing)
+                    // Reduce the width of the linear gradient ot make the text more focused
+                    .frame(width: 150)
                     // Here the offset will move the colors in the horizontal to forward
                     .offset(x: moveGradient ? -screenWidth/2 : screenWidth/2)
             }
