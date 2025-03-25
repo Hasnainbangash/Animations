@@ -31,7 +31,7 @@ struct GlowingView: View {
                     .foregroundColor(.red)
                     .font(.system(size: 100))
                     .glow()
-            }
+            } //: VSTACK
         } //: ZSTACK
     }
 }
@@ -39,10 +39,16 @@ struct GlowingView: View {
 // MARK: - MODIFIER
 
 struct Glow: ViewModifier {
+    @State private var throb: Bool = false
     func body(content: Content) -> some View {
         ZStack {
+            // Blurred version of the content (creates glow effect)
             content
-                .blur(radius: 15)
+                .blur(radius: throb ? 25 : 5)
+                .animation(.easeOut(duration: 0.5).repeatForever(), value: throb)
+                .onAppear {
+                    throb.toggle()
+                }
             
             content
         } //: ZSTACK
