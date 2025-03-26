@@ -13,7 +13,19 @@ struct LoadingView: View {
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            
+            Circle()
+                .stroke(lineWidth: 4)
+                .opacity(0.3)
+                .foregroundColor(.gray)
+            
+            Circle()
+                .trim(from: 0, to: 0.25)
+                .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round))
+                .foregroundColor(.black)
+            
+        } //: ZSTACK
     }
 }
 
