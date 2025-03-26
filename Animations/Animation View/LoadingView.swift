@@ -31,6 +31,8 @@ struct LoadingView: View {
                 .onAppear {
                     self.rotation = 360
                 }
+            
+            Text("Loading")
         } //: ZSTACK
     }
 }
