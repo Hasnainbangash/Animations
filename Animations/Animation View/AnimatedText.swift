@@ -16,7 +16,7 @@ struct AnimatedText: View {
     
     var body: some View {
         
-        let screenWidth = UIScreen.main.bounds.width
+        let screenWidth = UIScreen.main.bounds.size.width
         
         Rectangle()
             .overlay {
