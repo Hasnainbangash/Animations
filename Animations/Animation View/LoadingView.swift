@@ -10,6 +10,8 @@ import SwiftUI
 struct LoadingView: View {
     // MARK: - PROPERTIES
     
+    @State private var rotation: Double = 0
+    
     // MARK: - BODY
     
     var body: some View {
@@ -24,7 +26,11 @@ struct LoadingView: View {
                 .trim(from: 0, to: 0.25)
                 .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round))
                 .foregroundColor(.black)
-            
+                .rotationEffect(.degrees(rotation))
+                .animation(.linear(duration: 1).repeatForever(autoreverses: false), value: rotation)
+                .onAppear {
+                    self.rotation = 360
+                }
         } //: ZSTACK
     }
 }
