@@ -34,6 +34,8 @@ struct LoadingView: View {
             
             Text("Loading")
         } //: ZSTACK
+        .compositingGroup()
+        .frame(width: 125)
     }
 }
 
