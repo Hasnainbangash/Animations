@@ -31,9 +31,13 @@ struct MatchedView: View {
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
                 } //: VSTACK
                 .foregroundStyle(.white)
-                .background(.red)
+                .background(
+                    Color.red.matchedGeometryEffect(id: "background", in: namespace)
+                )
             } else {
                 VStack {
+                    Spacer()
+                    
                     Text("20 sections - 3 hours".uppercased())
                         .font(.footnote.bold())
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
@@ -44,7 +48,9 @@ struct MatchedView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } //: VSTACK
                 .foregroundStyle(.black)
-                .background(.blue)
+                .background(
+                    Color.blue.matchedGeometryEffect(id: "background", in: namespace)
+                )
             }
         } //: ZSTACK
         .onTapGesture {
