@@ -37,7 +37,9 @@ struct MatchedView: View {
                 .padding(20)
                 .foregroundStyle(.white)
                 .background(
-                    Color.red.matchedGeometryEffect(id: "background", in: namespace)
+                    Image("Background 5")
+                        .resizable()
+                        .matchedGeometryEffect(id: "background", in: namespace)
                 )
                 .padding(20)
             } else {
@@ -60,7 +62,9 @@ struct MatchedView: View {
                 .padding(20)
                 .foregroundStyle(.black)
                 .background(
-                    Color.blue.matchedGeometryEffect(id: "background", in: namespace)
+                    Image("Background 5")
+                        .resizable()
+                        .matchedGeometryEffect(id: "background", in: namespace)
                 )
             }
         } //: ZSTACK
