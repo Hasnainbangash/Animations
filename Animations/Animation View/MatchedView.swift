@@ -28,11 +28,13 @@ struct MatchedView: View {
                     
                     Text("20 sections - 3 hours".uppercased())
                         .font(.footnote.bold())
+                        .matchedGeometryEffect(id: "subtitle", in: namespace)
                 } //: VSTACK
             } else {
                 VStack {
                     Text("20 sections - 3 hours".uppercased())
                         .font(.footnote.bold())
+                        .matchedGeometryEffect(id: "subtitle", in: namespace)
                     
                     Text("SwiftUI")
                         .font(.largeTitle.weight(.bold))
