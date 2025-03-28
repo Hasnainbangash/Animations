@@ -74,12 +74,12 @@ struct MatchedView: View {
                 .background(
                     Image("Illustration1")
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .matchedGeometryEffect(id: "image", in: namespace)
                 )
                 .background(
                     Image("Background 5")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
                         .matchedGeometryEffect(id: "background", in: namespace)
                 )
                 .mask {
