@@ -10,10 +10,24 @@ import SwiftUI
 struct MatchedView: View {
     // MARK: - PROPERTIES
     
+    @Namespace var namespace
+    @State var show: Bool = false
+    
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if !show {
+                Text("SwiftUI")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            } else {
+                Text("SwiftUI")
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+        } //: ZSTACK
+        .onTapGesture {
+            show.toggle()
+        }
     }
 }
 
