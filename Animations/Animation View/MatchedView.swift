@@ -26,7 +26,9 @@ struct MatchedView: View {
             }
         } //: ZSTACK
         .onTapGesture {
-            show.toggle()
+            withAnimation {
+                show.toggle()
+            }
         }
     }
 }
