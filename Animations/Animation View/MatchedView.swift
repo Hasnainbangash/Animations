@@ -76,6 +76,14 @@ struct MatchedView: View {
                                 .matchedGeometryEffect(id: "title", in: namespace)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         } //: VSTACK
+                        .padding(20)
+                        .background(
+                            Rectangle()
+                                .fill(.ultraThinMaterial)
+                                .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                                .matchedGeometryEffect(id: "blur", in: namespace)
+                        )
+                        .offset(y: 100)
                     } //: OVERLAY
                     .frame(height: 500)
                     .padding(20)
