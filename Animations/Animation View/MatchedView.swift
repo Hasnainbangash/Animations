@@ -29,6 +29,10 @@ struct MatchedView: View {
                     Text("20 sections - 3 hours".uppercased())
                         .font(.footnote.bold())
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
+                    
+                    Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
+                        .font(.footnote)
+                        .matchedGeometryEffect(id: "text", in: namespace)
                 } //: VSTACK
                 .padding(20)
                 .foregroundStyle(.white)
@@ -39,6 +43,10 @@ struct MatchedView: View {
             } else {
                 VStack(alignment: .leading, spacing: 12) {
                     Spacer()
+                    
+                    Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
+                        .font(.footnote)
+                        .matchedGeometryEffect(id: "text", in: namespace)
                     
                     Text("20 sections - 3 hours".uppercased())
                         .font(.footnote.bold())
