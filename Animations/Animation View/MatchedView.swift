@@ -41,6 +41,10 @@ struct MatchedView: View {
                         .resizable()
                         .matchedGeometryEffect(id: "background", in: namespace)
                 )
+                .mask {
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .matchedGeometryEffect(id: "mask", in: namespace)
+                }
                 .padding(20)
             } else {
                 VStack(alignment: .leading, spacing: 12) {
@@ -66,6 +70,10 @@ struct MatchedView: View {
                         .resizable()
                         .matchedGeometryEffect(id: "background", in: namespace)
                 )
+                .mask {
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .matchedGeometryEffect(id: "mask", in: namespace)
+                }
             }
         } //: ZSTACK
         .onTapGesture {
