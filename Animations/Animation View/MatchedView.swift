@@ -37,6 +37,12 @@ struct MatchedView: View {
                 .padding(20)
                 .foregroundStyle(.white)
                 .background(
+                    Image("Illustration1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .matchedGeometryEffect(id: "image", in: namespace)
+                )
+                .background(
                     Image("Background 5")
                         .resizable()
                         .matchedGeometryEffect(id: "background", in: namespace)
@@ -66,8 +72,14 @@ struct MatchedView: View {
                 .padding(20)
                 .foregroundStyle(.black)
                 .background(
+                    Image("Illustration1")
+                        .resizable()
+                        .matchedGeometryEffect(id: "image", in: namespace)
+                )
+                .background(
                     Image("Background 5")
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .matchedGeometryEffect(id: "background", in: namespace)
                 )
                 .mask {
