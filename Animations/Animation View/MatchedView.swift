@@ -20,21 +20,31 @@ struct MatchedView: View {
     var body: some View {
         ZStack {
             if !show {
-                VStack(alignment: .leading, spacing: 12) {
+                VStack {
                     Spacer()
                     
-                    Text("SwiftUI")
-                        .font(.largeTitle.weight(.bold))
-                        .matchedGeometryEffect(id: "title", in: namespace)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("20 sections - 3 hours".uppercased())
-                        .font(.footnote.bold())
-                        .matchedGeometryEffect(id: "subtitle", in: namespace)
-                    
-                    Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
-                        .font(.footnote)
-                        .matchedGeometryEffect(id: "text", in: namespace)
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("SwiftUI")
+                            .font(.largeTitle.weight(.bold))
+                            .matchedGeometryEffect(id: "title", in: namespace)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Text("20 sections - 3 hours".uppercased())
+                            .font(.footnote.bold())
+                            .matchedGeometryEffect(id: "subtitle", in: namespace)
+                        
+                        Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
+                            .font(.footnote)
+                            .matchedGeometryEffect(id: "text", in: namespace)
+                    } //: VSTACK
+                    .padding(20)
+                    .background(
+                        Rectangle()
+                            .fill(.ultraThinMaterial)
+                            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                            .blur(radius: 30)
+                            .matchedGeometryEffect(id: "blur", in: namespace)
+                    )
                 } //: VSTACK
                 .padding(20)
                 .foregroundStyle(.white)
