@@ -30,6 +30,8 @@ struct MatchedView: View {
                         .font(.footnote.bold())
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
                 } //: VSTACK
+                .foregroundStyle(.white)
+                .background(.red)
             } else {
                 VStack {
                     Text("20 sections - 3 hours".uppercased())
@@ -41,6 +43,8 @@ struct MatchedView: View {
                         .matchedGeometryEffect(id: "title", in: namespace)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } //: VSTACK
+                .foregroundStyle(.black)
+                .background(.blue)
             }
         } //: ZSTACK
         .onTapGesture {
