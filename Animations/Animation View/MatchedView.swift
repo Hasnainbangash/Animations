@@ -65,7 +65,7 @@ struct MatchedView: View {
             }
         } //: ZSTACK
         .onTapGesture {
-            withAnimation {
+            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                 show.toggle()
             }
         }
