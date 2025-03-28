@@ -73,6 +73,7 @@ struct MatchedView: View {
                             .matchedGeometryEffect(id: "title", in: namespace)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     } //: VSTACK
+                    .frame(height: 500)
                     .padding(20)
                     .foregroundStyle(.black)
                     .background(
