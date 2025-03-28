@@ -57,22 +57,26 @@ struct MatchedView: View {
                 .padding(20)
             } else {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack {
                         Spacer()
-                        
-                        Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
-                            .font(.footnote)
-                            .matchedGeometryEffect(id: "text", in: namespace)
-                        
-                        Text("20 sections - 3 hours".uppercased())
-                            .font(.footnote.bold())
-                            .matchedGeometryEffect(id: "subtitle", in: namespace)
-                        
-                        Text("SwiftUI")
-                            .font(.largeTitle.weight(.bold))
-                            .matchedGeometryEffect(id: "title", in: namespace)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                     } //: VSTACK
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
+                                .font(.footnote)
+                                .matchedGeometryEffect(id: "text", in: namespace)
+                            
+                            Text("20 sections - 3 hours".uppercased())
+                                .font(.footnote.bold())
+                                .matchedGeometryEffect(id: "subtitle", in: namespace)
+                            
+                            Text("SwiftUI")
+                                .font(.largeTitle.weight(.bold))
+                                .matchedGeometryEffect(id: "title", in: namespace)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        } //: VSTACK
+                    } //: OVERLAY
                     .frame(height: 500)
                     .padding(20)
                     .foregroundStyle(.black)
