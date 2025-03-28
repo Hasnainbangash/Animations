@@ -20,7 +20,7 @@ struct MatchedView: View {
     var body: some View {
         ZStack {
             if !show {
-                VStack {
+                VStack(alignment: .leading, spacing: 12) {
                     Text("SwiftUI")
                         .font(.largeTitle.weight(.bold))
                         .matchedGeometryEffect(id: "title", in: namespace)
@@ -30,12 +30,14 @@ struct MatchedView: View {
                         .font(.footnote.bold())
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
                 } //: VSTACK
+                .padding(20)
                 .foregroundStyle(.white)
                 .background(
                     Color.red.matchedGeometryEffect(id: "background", in: namespace)
                 )
+                .padding(20)
             } else {
-                VStack {
+                VStack(alignment: .leading, spacing: 12) {
                     Spacer()
                     
                     Text("20 sections - 3 hours".uppercased())
@@ -47,6 +49,7 @@ struct MatchedView: View {
                         .matchedGeometryEffect(id: "title", in: namespace)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } //: VSTACK
+                .padding(20)
                 .foregroundStyle(.black)
                 .background(
                     Color.blue.matchedGeometryEffect(id: "background", in: namespace)
