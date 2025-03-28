@@ -71,6 +71,24 @@ struct MatchedView: View {
                         Spacer()
                     } //: VSTACK
                     .frame(maxWidth: .infinity)
+                    .frame(height: 500)
+                    .padding(20)
+                    .foregroundStyle(.black)
+                    .background(
+                        Image("Illustration1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .matchedGeometryEffect(id: "image", in: namespace)
+                    )
+                    .background(
+                        Image("Background 5")
+                            .resizable()
+                            .matchedGeometryEffect(id: "background", in: namespace)
+                    )
+                    .mask {
+                        RoundedRectangle(cornerRadius: 30, style: .continuous)
+                            .matchedGeometryEffect(id: "mask", in: namespace)
+                    }
                     .overlay {
                         VStack(alignment: .leading, spacing: 12) {
                             Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
@@ -95,24 +113,6 @@ struct MatchedView: View {
                         )
                         .offset(y: 100)
                     } //: OVERLAY
-                    .frame(height: 500)
-                    .padding(20)
-                    .foregroundStyle(.black)
-                    .background(
-                        Image("Illustration1")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .matchedGeometryEffect(id: "image", in: namespace)
-                    )
-                    .background(
-                        Image("Background 5")
-                            .resizable()
-                            .matchedGeometryEffect(id: "background", in: namespace)
-                    )
-                    .mask {
-                        RoundedRectangle(cornerRadius: 30, style: .continuous)
-                            .matchedGeometryEffect(id: "mask", in: namespace)
-                    }
                 } //: SCROLL VIEW
             }
         } //: ZSTACK
